@@ -1,0 +1,13 @@
+var:
+  last_build_time: 1723534875
+  option:
+    ascii_punct: true
+    full_shape: false
+  previously_selected_schema: herman_double_pinyin
+  schema_access_time:
+    double_pinyin: 1689060375
+    double_pinyin_fly_pg: 1701066510
+    double_pinyin_flypy: 1714461282
+    double_pinyin_ziguang: 1689057931
+    herman_double_pinyin: 1714895246
+    rime_mint: 1710399077

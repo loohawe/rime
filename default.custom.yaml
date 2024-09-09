@@ -1,28 +1,20 @@
-# default.custom.yaml, 全局生效 
-# save it to:   
-#   ~/.config/ibus/rime  (linux)  
-#   ~/Library/Rime       (macOS)  
-#   %APPDATA%\Rime       (windows)
-
 patch:
-
-  menu:
-    page_size: 5
-
-  ascii_composer:
-    switch_key:
-      Shift_L: clear
-
-  punctuator:
-    import_preset: symbols
-
+  "ascii_composer/good_old_caps_lock": true
+  "ascii_composer/switch_key":
+    Caps_Lock: commit_code
+    Control_L: noop # 不做任何操作
+    Control_R: noop # 不做任何操作
+    Shift_L: commit_code
+    Shift_R: inline_ascii
+  "menu/page_size": 6
   schema_list:
-    - schema: double_pinyin_flypy
-    
-  key_binder:
-    bindings:
-      - { when: has_menu, accept: semicolon,  send: 2 } #分号第二各候选项
-      - { when: has_menu, accept: apostrophe, send: 3 } #单引号第三个候选项
-      - { when: has_menu, accept: bracketright, send: Page_Down } #］下一页
-      - { when: has_menu, accept: bracketleft, send: Page_Up } # [上一页
-      
+    - schema: herman_double_pinyin
+    - {schema: rime_mint}           # 薄荷拼音
+    - {schema: double_pinyin_flypy} # 小鹤双拼
+    - {schema: rime_mint_flypy}     # 薄荷拼音-小鹤混输方案
+  "switcher/hotkeys":
+    - "Control+grave"
+  "translator/enable_encoder": true
+  "translator/enable_sentence": true
+  "translator/enable_user_dict": true
+  "translator/encode_commit_history": true
